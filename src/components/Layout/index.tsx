@@ -1,5 +1,5 @@
-import AsideBar from "@/components/AsideBar";
-import BlogCard from "@/components/AsideBar/BlogCard";
+import AsideBar from "@/components/Layout/AsideBar";
+import BlogCard from "@/components/Layout/AsideBar/BlogCard";
 import Footer from "@/components/Layout/Footer";
 import { FunctionComponent, ReactNode } from "react";
 

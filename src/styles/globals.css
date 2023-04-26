@@ -6,7 +6,7 @@
   @apply text-zinc-500;
 }
 
-.text-seconday {
+.text-secondary {
   @apply text-zinc-400;
 }
 
@@ -16,4 +16,13 @@
 
 .text-size-small {
   @apply text-[13px];
+}
+
+@layer components {
+  .transition-all-in-one {
+    @apply transition-all duration-300 ease-linear;
+  }
+  .after-transition-all-in-one {
+    @apply after:transition-all after:duration-300 after:ease-linear;
+  }
 }

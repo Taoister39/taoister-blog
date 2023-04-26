@@ -5,8 +5,8 @@ import {
   HOME_URL,
   TAG_URL,
 } from "@/common/constants/path";
-import BlogCard from "@/components/AsideBar/BlogCard";
-import BlogNav from "@/components/AsideBar/BlogNav";
+import BlogCard from "@/components/Layout/AsideBar/BlogCard";
+import BlogNav from "@/components/Layout/AsideBar/BlogNav";
 import { FaArchive, FaHome, FaTags, FaTh, FaUserAlt } from "react-icons/fa";
 
 import taoisterImg from "@/assets/Universe-Taoister.png";
