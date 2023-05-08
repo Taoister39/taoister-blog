@@ -4,7 +4,6 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="cn">
-      <title>{BLOG_TITLE}</title>
       <Head>
         <meta
           name="description"
@@ -14,6 +13,7 @@ export default function Document() {
           name="keywords"
           content={`${BLOG_AUTHOR}, Taoister39, Nextjs, React`}
         />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="application-name" content={BLOG_TITLE} />
       </Head>
       <body className="selection:text-white selection:bg-zinc-700 text-primary">
