@@ -21,3 +21,5 @@ export interface Post {
   categories?: PostTag[];
   tags?: PostCategory[];
 }
+
+export interface PostRequest {}

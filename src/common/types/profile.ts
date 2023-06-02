@@ -6,6 +6,7 @@ export interface Profile {
   github?: string;
   email?: string;
   site?: string;
+  twitter: string;
   createdAt: string;
   updatedAt: string;
 }

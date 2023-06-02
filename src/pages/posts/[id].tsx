@@ -94,7 +94,7 @@ export const getServerSideProps: GetServerSideProps<
   };
 };
 
-const ArticleDetail: NextPage<
+const ArticleDetailPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({ data, profile }) => {
   const post = data.data;
@@ -121,4 +121,4 @@ const ArticleDetail: NextPage<
   );
 };
 
-export default ArticleDetail;
+export default ArticleDetailPage;

@@ -42,10 +42,10 @@ self.addEventListener("fetch", (event) => {
           return response;
         }
         return fetch(event.request)
-          .then((newreq) => {
+          .then((newRequest) => {
             console.log("network fetch: " + url);
-            if (newreq.ok) cache.put(event.request, newreq.clone());
-            return newreq;
+            if (newRequest.ok) cache.put(event.request, newRequest.clone());
+            return newRequest;
           })
           .catch(() => null);
       });
