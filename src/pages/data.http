@@ -1,9 +1,0 @@
-GET https://aifuxi.cool/client_api/v1/posts?limit=1000&offset=0
-
-
-###
-GET https://aifuxi.cool/client_api/v1/posts/clb84bg04000qvxbdw0w9p3q4
-
-### 
-
-GET https://aifuxi.cool/client_api/v1/profile
