@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
     (res) => res.data
   );
 
-  console.log(data);
+  // console.log(data);
 
   return { props: { data } };
 };

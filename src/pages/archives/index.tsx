@@ -4,20 +4,20 @@ import {
   NextPage,
 } from "next";
 
-interface ArchivesProps {}
+interface ArchivesPageProps {}
 
 export const getServerSideProps: GetServerSideProps<
-  ArchivesProps
+  ArchivesPageProps
 > = async () => {
   return {
     props: {},
   };
 };
 
-const Archives: NextPage<
+const ArchivesPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = ({}) => {
   return <></>;
 };
 
-export default Archives;
+export default ArchivesPage;
