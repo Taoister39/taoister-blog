@@ -18,7 +18,7 @@ const ArticleAttributes: FunctionComponent<ArticleAttributesProps> = ({
   return (
     <div className="items-center hidden md:flex gap-4 text-size-small">
       {/* 類型標籤 -- 是否原創 */}
-      <TypeTag>{item.type ? postTypeMap[item.type] : "-"}</TypeTag>
+      <TypeTag type={item.type} />
       {/* 發佈時間 -- 更新時間*/}
       <div className="inline-flex items-center space-x-1 md:justify-center text-secondary text-size-small">
         <FaCalendarAlt />

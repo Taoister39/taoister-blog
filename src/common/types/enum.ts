@@ -20,3 +20,13 @@ export enum POST_TYPE_ENUM {
   // 原创
   ORIGINAL = "ORIGINAL",
 }
+
+export enum SORT_BY_ENUM {
+  CREATED_TIME = "createdTime",
+  UPDATED_TIME = "updatedTime",
+}
+
+export enum SORT_ORDER_ENUM {
+  ASC = "asc",
+  DESC = "desc",
+}

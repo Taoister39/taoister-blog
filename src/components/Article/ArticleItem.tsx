@@ -1,17 +1,10 @@
-import { postTypeMap } from "@/common/config/postTypeMap";
 import { POST_URL } from "@/common/constants/path";
 import { Post } from "@/common/types/post";
 import ArticleAttributes from "@/components/Article/ArticleAttributes";
 import ArticleTitle from "@/components/Article/ArticleTitle";
 import ReadAllButton from "@/components/Button/ReadAllButton";
-import ClassifyTag from "@/components/Tag/ClassifyTag";
-import PersonalityTag from "@/components/Tag/PersonalityTag";
-import TypeTag from "@/components/Tag/TypeTag";
-import { formatNumber } from "@/utils/number";
-import { formatTime } from "@/utils/time";
 import Link from "next/link";
 import { FunctionComponent } from "react";
-import { FaCalendarAlt, FaEye } from "react-icons/fa";
 
 interface ArticleItemProps {
   item: Post;
