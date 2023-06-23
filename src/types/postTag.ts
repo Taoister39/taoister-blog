@@ -1,10 +1,6 @@
-import { PaginationReq } from "@/common/types/base";
-import {
-  IS_DELETED_ENUM,
-  SORT_BY_ENUM,
-  SORT_ORDER_ENUM,
-} from "@/common/types/enum";
-import { Post } from "@/common/types/post";
+import { PaginationReq } from "@/types/base";
+import { IS_DELETED_ENUM, SORT_BY_ENUM, SORT_ORDER_ENUM } from "@/types/enum";
+import { Post } from "@/types/post";
 
 export interface PostTag {
   id: string;

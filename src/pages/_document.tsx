@@ -1,4 +1,4 @@
-import { BLOG_AUTHOR, BLOG_TITLE } from "@/common/constants/blog";
+import { BLOG_AUTHOR, BLOG_TITLE } from "@/constants/blog";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {

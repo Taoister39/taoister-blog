@@ -1,5 +1,5 @@
-import { POST_URL } from "@/common/constants/path";
-import { Post } from "@/common/types/post";
+import { POST_URL } from "@/constants/path";
+import { Post } from "@/types/post";
 import ArticleAttributes from "@/components/Article/ArticleAttributes";
 import ArticleTitle from "@/components/Article/ArticleTitle";
 import ReadAllButton from "@/components/Button/ReadAllButton";

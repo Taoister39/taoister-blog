@@ -1,5 +1,5 @@
-import { BLOG_AUTHOR } from "@/common/constants/blog";
-import { AIFUXI_GITHUB, NEXT_URL } from "@/common/constants/url";
+import { BLOG_AUTHOR } from "@/constants/blog";
+import { AIFUXI_GITHUB, NEXT_URL } from "@/constants/url";
 import Image from "next/image";
 import Link from "next/link";
 import { FunctionComponent, useMemo } from "react";

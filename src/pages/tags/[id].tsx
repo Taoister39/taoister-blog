@@ -1,5 +1,5 @@
 import { getPostTag } from "@/api/postTag";
-import { PostTag, PostTagWithPost } from "@/common/types/postTag";
+import { PostTag, PostTagWithPost } from "@/types/postTag";
 import { TagItemOfPost } from "@/components/Tag/TagItem";
 import {
   GetServerSideProps,

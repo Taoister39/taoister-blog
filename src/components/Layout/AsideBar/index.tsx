@@ -4,7 +4,7 @@ import {
   CATEGORY_URL,
   HOME_URL,
   TAG_URL,
-} from "@/common/constants/path";
+} from "@/constants/path";
 import BlogCard from "@/components/Layout/AsideBar/BlogCard";
 import BlogNav from "@/components/Layout/AsideBar/BlogNav";
 import { FaArchive, FaHome, FaTags, FaTh, FaUserAlt } from "react-icons/fa";

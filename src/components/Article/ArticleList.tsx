@@ -1,5 +1,5 @@
-import { IListResponse } from "@/common/types/base";
-import { Post } from "@/common/types/post";
+import { IListResponse } from "@/types/base";
+import { Post } from "@/types/post";
 import ArticleItem from "@/components/Article/ArticleItem";
 import { FunctionComponent } from "react";
 

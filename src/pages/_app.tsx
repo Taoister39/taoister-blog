@@ -1,4 +1,4 @@
-import { BLOG_TITLE } from "@/common/constants/blog";
+import { BLOG_TITLE } from "@/constants/blog";
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";

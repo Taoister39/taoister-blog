@@ -1,4 +1,4 @@
-import { HOME_URL } from "@/common/constants/path";
+import { HOME_URL } from "@/constants/path";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { FaBars } from "react-icons/fa";

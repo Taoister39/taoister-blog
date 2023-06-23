@@ -6,7 +6,7 @@ import {
 } from "next";
 
 import MarkdownEditor from "md-editor-rt";
-import { About } from "@/common/types/about";
+import { About } from "@/types/about";
 import { formatTime } from "@/utils/time";
 
 import "md-editor-rt/lib/style.css";

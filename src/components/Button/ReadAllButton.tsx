@@ -1,4 +1,4 @@
-import { POST_URL } from "@/common/constants/path";
+import { POST_URL } from "@/constants/path";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";

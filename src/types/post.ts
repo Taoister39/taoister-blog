@@ -1,11 +1,11 @@
-import { PaginationReq } from "@/common/types/base";
+import { PaginationReq } from "@/types/base";
 import {
   IS_DELETED_ENUM,
   IS_PUBLISHED_ENUM,
   POST_TYPE_ENUM,
-} from "@/common/types/enum";
-import { PostCategory } from "@/common/types/postCategory";
-import { PostTag } from "@/common/types/postTag";
+} from "@/types/enum";
+import { PostCategory } from "@/types/postCategory";
+import { PostTag } from "@/types/postTag";
 
 export interface Post {
   id: string;

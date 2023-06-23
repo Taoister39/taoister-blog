@@ -1,7 +1,7 @@
 import { getPostListApi } from "@/api/post";
-import { IListResponse } from "@/common/types/base";
-import { POST_TYPE_ENUM } from "@/common/types/enum";
-import { Post } from "@/common/types/post";
+import { IListResponse } from "@/types/base";
+import { POST_TYPE_ENUM } from "@/types/enum";
+import { Post } from "@/types/post";
 import ArticleList from "@/components/Article/ArticleList";
 import {
   GetServerSideProps,

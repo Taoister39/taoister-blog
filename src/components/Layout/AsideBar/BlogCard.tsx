@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import { ARCHIVES_URL, CATEGORY_URL, TAG_URL } from "@/common/constants/path";
+import { ARCHIVES_URL, CATEGORY_URL, TAG_URL } from "@/constants/path";
 import { FaEnvelope, FaGithub, FaGlobeAsia, FaTwitter } from "react-icons/fa";
 
 interface BlogAvatarProps {

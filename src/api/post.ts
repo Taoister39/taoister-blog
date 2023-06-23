@@ -1,5 +1,5 @@
-import { IListResponse, IResponse } from "@/common/types/base";
-import { Post, PostRequest } from "@/common/types/post";
+import { IListResponse, IResponse } from "@/types/base";
+import { Post, PostRequest } from "@/types/post";
 import request from "@/request";
 
 const API_URL = `/v1/posts`;

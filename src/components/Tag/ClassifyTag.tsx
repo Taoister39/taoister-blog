@@ -1,5 +1,5 @@
-import { CATEGORY_URL } from "@/common/constants/path";
-import { PostTag } from "@/common/types/postTag";
+import { CATEGORY_URL } from "@/constants/path";
+import { PostTag } from "@/types/postTag";
 import Link from "next/link";
 import { FunctionComponent, ReactNode } from "react";
 import { FaFolderOpen } from "react-icons/fa";

@@ -1,8 +1,8 @@
-import { BLOG_AUTHOR } from "@/common/constants/blog";
-import { IListResponse, IResponse } from "@/common/types/base";
-import { POST_TYPE_ENUM } from "@/common/types/enum";
-import { Post } from "@/common/types/post";
-import { Profile } from "@/common/types/profile";
+import { BLOG_AUTHOR } from "@/constants/blog";
+import { IListResponse, IResponse } from "@/types/base";
+import { POST_TYPE_ENUM } from "@/types/enum";
+import { Post } from "@/types/post";
+import { Profile } from "@/types/profile";
 import ArticleAttributes from "@/components/Article/ArticleAttributes";
 import ArticleTitle from "@/components/Article/ArticleTitle";
 import {

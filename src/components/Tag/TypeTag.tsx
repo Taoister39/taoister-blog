@@ -1,5 +1,5 @@
-import { postTypeMap } from "@/common/config/postTypeMap";
-import { POST_TYPE_ENUM } from "@/common/types/enum";
+import { postTypeMap } from "@/constants/postTypeMap";
+import { POST_TYPE_ENUM } from "@/types/enum";
 import { FunctionComponent, ReactNode } from "react";
 
 interface TypeTagProps {

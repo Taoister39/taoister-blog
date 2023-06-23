@@ -1,10 +1,10 @@
-import { POST_URL, TAG_URL } from "@/common/constants/path";
-import { Post } from "@/common/types/post";
+import { POST_URL, TAG_URL } from "@/constants/path";
+import { Post } from "@/types/post";
 import {
   PostTag,
   PostTagWithPost,
   PostTagWithPostCount,
-} from "@/common/types/postTag";
+} from "@/types/postTag";
 import { dateFormatter, formatTime } from "@/utils/time";
 import Link from "next/link";
 import { FC, FunctionComponent } from "react";

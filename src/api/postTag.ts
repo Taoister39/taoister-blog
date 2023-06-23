@@ -1,10 +1,10 @@
-import { IListResponse, IResponse } from "@/common/types/base";
+import { IListResponse, IResponse } from "@/types/base";
 import {
   FindManyPostTagReq,
   PostTag,
   PostTagWithPost,
   PostTagWithPostCount,
-} from "@/common/types/postTag";
+} from "@/types/postTag";
 import request from "@/request";
 
 const POST_TAG_URL = "v1/post_tags";

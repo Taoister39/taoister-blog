@@ -1,4 +1,4 @@
-import { About } from "@/common/types/about";
+import { About } from "@/types/about";
 import request from "@/request";
 
 const API_URL = `/v1/about`;

@@ -1,4 +1,4 @@
-import { CodeEnum } from "@/common/types/enum";
+import { CodeEnum, SORT_BY_ENUM, SORT_ORDER_ENUM } from "@/types/enum";
 
 export interface IListResponse<T> {
   code: CodeEnum;
@@ -17,4 +17,9 @@ export interface IResponse<T> {
 export interface PaginationReq {
   limit?: number;
   offset?: number;
+}
+
+export interface SortReq {
+  sortBy?: SORT_BY_ENUM;
+  order?: SORT_ORDER_ENUM;
 }

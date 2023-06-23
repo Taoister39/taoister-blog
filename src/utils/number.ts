@@ -1,4 +1,4 @@
-import { THOUSAND, TEN_THOUSAND } from "./../common/constants/numbers";
+import { THOUSAND, TEN_THOUSAND } from "../constants/numbers";
 
 export const formatNumber = (num?: number): string | number => {
   if (num === undefined) {

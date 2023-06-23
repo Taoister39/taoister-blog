@@ -1,5 +1,5 @@
-import { postTypeMap } from "@/common/config/postTypeMap";
-import { Post } from "@/common/types/post";
+import { postTypeMap } from "@/constants/postTypeMap";
+import { Post } from "@/types/post";
 import ClassifyTag from "@/components/Tag/ClassifyTag";
 import PersonalityTag from "@/components/Tag/PersonalityTag";
 import TypeTag from "@/components/Tag/TypeTag";

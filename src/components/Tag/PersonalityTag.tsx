@@ -1,5 +1,5 @@
-import { TAG_URL } from "@/common/constants/path";
-import { PostCategory } from "@/common/types/postCategory";
+import { TAG_URL } from "@/constants/path";
+import { PostCategory } from "@/types/postCategory";
 import Link from "next/link";
 import { FunctionComponent } from "react";
 import { FaTags } from "react-icons/fa";
