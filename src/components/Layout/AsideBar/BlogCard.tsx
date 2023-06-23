@@ -1,9 +1,10 @@
-import { FunctionComponent } from "react";
-
+import { FunctionComponent, useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ARCHIVES_URL, CATEGORY_URL, TAG_URL } from "@/constants/path";
-import { FaEnvelope, FaGithub, FaGlobeAsia, FaTwitter } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaTwitter } from "react-icons/fa";
+import { StatisticsCount } from "@/types/statistics";
+import { getStatisticsCount as getStatisticsCountApi } from "@/api/statistics";
 
 interface BlogAvatarProps {
   email: string;
@@ -22,12 +23,23 @@ const BlogCard: FunctionComponent<BlogAvatarProps> = ({
   twitter,
   slogan,
 }) => {
+  useEffect(() => {
+    getStatisticsCountApi().then((res) => {
+      // console.log(res)
+      setStatisticsCount(res.data.data);
+    });
+  }, []);
+
+  const [statisticsCount, setStatisticsCount] = useState<StatisticsCount>();
+
   return (
     <div className="sticky flex-col items-center px-3 py-5 mb-6 bg-white shadow-lg top-4 hidden lg:flex">
       {/* 頭像 */}
       <div className="w-[120px] h-[120px] border rounded-full overflow-hidden bg-white relative">
         <Image
           src={avatar}
+          width={300}
+          height={300}
           alt="avatar"
           className="block w-[108px] h-[108px] absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 object-cover"
         />
@@ -43,7 +55,9 @@ const BlogCard: FunctionComponent<BlogAvatarProps> = ({
             href={ARCHIVES_URL}
             className="flex flex-col items-center justify-center px-4"
           >
-            <span className="text-base font-bold text-zinc-800">{0}</span>
+            <span className="text-base font-bold text-zinc-800">
+              {statisticsCount?.postCount ?? 0}
+            </span>
             <span className="text-size-small">文章</span>
           </Link>
         </li>
@@ -52,7 +66,9 @@ const BlogCard: FunctionComponent<BlogAvatarProps> = ({
             href={CATEGORY_URL}
             className="flex flex-col items-center justify-center px-4 border-l border-r"
           >
-            <span className="text-base font-bold text-zinc-800">{0}</span>
+            <span className="text-base font-bold text-zinc-800">
+              {statisticsCount?.categoryCount ?? 0}
+            </span>
             <span className="text-size-small">分類</span>
           </Link>
         </li>
@@ -61,7 +77,9 @@ const BlogCard: FunctionComponent<BlogAvatarProps> = ({
             href={TAG_URL}
             className="flex flex-col items-center justify-center px-4"
           >
-            <span className="text-base font-bold text-zinc-800">{0}</span>
+            <span className="text-base font-bold text-zinc-800">
+              {statisticsCount?.tagCount ?? 0}
+            </span>
             <span className="text-size-small">標籤</span>
           </Link>
         </li>

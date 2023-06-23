@@ -22,7 +22,7 @@ export const getServerSideProps: GetServerSideProps<
 
   return {
     props: {
-      about: data,
+      about: data.data,
     },
   };
 };

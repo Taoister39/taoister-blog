@@ -25,12 +25,12 @@ const ArticleAttributes: FunctionComponent<ArticleAttributesProps> = ({
         <span>{formatTime(item.createdAt)}</span>
       </div>
       {/* 分类 */}
-      {item.categories?.length && (
+      {!!item.categories?.length && (
         <ClassifyTag categories={item.categories} id={item.id} />
       )}
 
       {/* 标签 */}
-      {item.tags?.length && <PersonalityTag tags={item.tags} id={item.id} />}
+      {!!item.tags?.length && <PersonalityTag tags={item.tags} id={item.id} />}
 
       {/* 閱讀數 */}
       <div className="inline-flex items-center space-x-2 text-secondary">

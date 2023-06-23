@@ -10,8 +10,18 @@ import BlogNav from "@/components/Layout/AsideBar/BlogNav";
 import { FaArchive, FaHome, FaTags, FaTh, FaUserAlt } from "react-icons/fa";
 
 import taoisterImg from "@/assets/Universe-Taoister.png";
+import { getProfileApi } from "@/api/profile";
+import { useEffect, useState } from "react";
+import { Profile } from "@/types/profile";
 
 function AsideBar() {
+  const [profile, setProfile] = useState<Profile>();
+  useEffect(() => {
+    getProfileApi().then((res) => {
+      setProfile(res.data.data);
+    });
+  }, []);
+
   return (
     <>
       <BlogNav
@@ -45,12 +55,12 @@ function AsideBar() {
         ]}
       />
       <BlogCard
-        email="Taoister39@outlook.com"
-        github="https://github.com/Taoister39"
-        author="乾坤道長"
-        slogan="斗轉星移，萬物乾坤。"
-        twitter="https://mobile.twitter.com/Taoister39"
-        avatar={taoisterImg}
+        email={profile?.email ?? "Taoister39@outlook.com"}
+        github={profile?.github ?? "https://github.com/Taoister39"}
+        author={profile?.author ?? "乾坤道長"}
+        slogan={profile?.slogan ?? "斗轉星移，萬物乾坤。"}
+        twitter={profile?.twitter ?? "https://mobile.twitter.com/Taoister39"}
+        avatar={profile?.avatar ?? taoisterImg}
       />
     </>
   );

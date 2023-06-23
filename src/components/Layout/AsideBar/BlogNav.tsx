@@ -1,6 +1,6 @@
 import { HOME_URL } from "@/constants/path";
 import Link from "next/link";
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import classNames from "classnames";
 import { useRouter } from "next/router";
@@ -19,12 +19,19 @@ interface BlogNavProps {
 const BlogNav: FC<BlogNavProps> = ({ blogTitle, navItems }) => {
   const router = useRouter();
   const { pathname } = router;
-  const menu = false;
+  const [isMenu, setIsMenu] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsMenu((prev) => !prev);
+  };
 
   return (
     <div className="w-full mb-6 bg-white shadow-lg">
       <div className="fixed top-0 left-0 right-0 z-20 flex items-center px-4 bg-zinc-800 lg:static">
-        <FaBars className="mr-4 text-3xl text-white cursor-pointer lg:hidden" />
+        <FaBars
+          className="mr-4 text-3xl text-white cursor-pointer lg:hidden"
+          onClick={handleToggleMenu}
+        />
         <Link
           href={HOME_URL}
           className="flex-1 text-white py-6 text-2xl font-medium text-center "
@@ -38,8 +45,8 @@ const BlogNav: FC<BlogNavProps> = ({ blogTitle, navItems }) => {
           className={classNames(
             "lg:h-full fixed top-20 lg:static left-0 right-0 z-50 lg:flex lg:flex-col py-4 bg-white lg:shadow-none",
             {
-              "shadow-x1": menu,
-              hidden: !menu,
+              "shadow-x1": isMenu,
+              hidden: !isMenu,
             }
           )}
         >

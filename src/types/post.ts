@@ -1,4 +1,4 @@
-import { PaginationReq } from "@/types/base";
+import { PaginationReq, SortReq } from "@/types/base";
 import {
   IS_DELETED_ENUM,
   IS_PUBLISHED_ENUM,
@@ -23,4 +23,4 @@ export interface Post {
   tags?: PostCategory[];
 }
 
-export interface PostRequest extends PaginationReq {}
+export interface PostRequest extends PaginationReq, SortReq {}

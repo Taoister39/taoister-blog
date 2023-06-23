@@ -17,11 +17,15 @@ import "md-editor-rt/lib/style.css";
 import MdEditor from "md-editor-rt";
 import { formatTime } from "@/utils/time";
 import { getProfileApi } from "@/api/profile";
-import { getPostApi, getPostListApi } from "@/api/post";
+import { getPostApi, getPostListApi, patchViewIncrementApi } from "@/api/post";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { getViewedPostIds, setViewedPostId } from "@/utils/storage";
+import { VIEW_INCREMENT_MILLISECOND } from "@/constants/numbers";
 
 interface ArticleDetailProps {
   data: IResponse<Post>;
-  profile: IResponse<Profile>;
+  // profile: IResponse<Profile>;
 }
 
 export const getServerSideProps: GetServerSideProps<
@@ -30,23 +34,48 @@ export const getServerSideProps: GetServerSideProps<
   const { id } = params as { id: string };
 
   const data: IResponse<Post> = await getPostApi(id).then((res) => res.data);
-  const profile: IResponse<Profile> = await getProfileApi().then(
-    (res) => res.data
-  );
+  // const profile: IResponse<Profile> = await getProfileApi().then(
+  //   (res) => res.data
+  // );
 
   return {
     props: {
       data,
-      profile,
+      // profile,
     },
   };
 };
 
 const ArticleDetailPage: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ data, profile }) => {
+> = ({ data }) => {
   const post = data.data;
   const author = BLOG_AUTHOR;
+  const router = useRouter();
+
+  useEffect(() => {
+    let timeId: number;
+    if (post?.id) {
+      const viewedIds = getViewedPostIds();
+      const isViewed = viewedIds?.includes(post.id);
+
+      if (!isViewed) {
+        // 没看过并且在文章详情呆够 VIEW_INCREMENT_MILLISECOND 向后端发送阅读量+1请求
+        // 防止浏览量一直++
+        timeId = window.setTimeout(async () => {
+          await patchViewIncrementApi(post.id);
+          setViewedPostId(post.id);
+        }, VIEW_INCREMENT_MILLISECOND);
+      }
+    } else {
+      router.replace("/404");
+    }
+
+    return () => {
+      timeId && window.clearTimeout(timeId);
+    };
+  }, [post, router]);
+
   return (
     <div className="space-y-2">
       <Head>
