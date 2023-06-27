@@ -2,6 +2,10 @@
 const version = "1.0.3",
   CACHE = version + "::BlogMember",
   installFilesEssential = ["/", "/manifest.json", "/favicon.ico", "/logo.png"];
+/**
+ * 生产环境中，这些路径都在一个域名下
+ */
+const excludedPaths = ["/admin", "/ADMIN_API", "/CLIENT_API"];
 
 // install static assets
 function installStaticFiles() {
@@ -34,7 +38,18 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
-  let url = event.request.url;
+  let url = new URL(event.request.url);
+
+  if (excludedPaths.some((path) => url.pathname.startsWith(path))) {
+    // 不走Service Worker，直接从网络获取响应
+    return fetch(event.request);
+  }
+  // 检查请求的URL是否包含"chrome-extension"
+  if (url.href.includes("chrome-extension")) {
+    // 不走Service Worker，直接从网络获取响应
+    return fetch(event.request);
+  }
+
   event.respondWith(
     caches.open(CACHE).then((cache) => {
       return cache.match(event.request).then((response) => {
